@@ -22,8 +22,9 @@ def fractale(pos,size,angleP,angleO,color):
     if size <= 2:
         return 0
     
-    pygame.draw.line(display,color,pos,(pos[0]+int(math.cos(angleP)*size),pos[1]+int(math.sin(angleP)*size)),1)
-    pos=(pos[0]+(math.cos(angleP)*size),pos[1]+(math.sin(angleP)*size))
+    pos1=(pos[0]+int(math.cos(angleP)*size),pos[1]+int(math.sin(angleP)*size))
+    pygame.draw.line(display,color,pos,pos1,1)
+    pos=pos1
     color=(int(color[0]/(12/11)),color[1],int(color[2]/(2)))
 
     fractale(pos,size/(3/2),angleP+angleO,angleO,color)
